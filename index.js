@@ -23,19 +23,19 @@ function lakukanLooping(arrPegawai) {
 
       Contoh: ["Aisyah Nirmala", "Mansur Faisal", ...]
   */
-  let hasilLooping = null;
+  let hasilLooping = [];
 
   /*
     TODO 2: Buatlah sebuah variabel bernama "jumlahPria"
       yang berisi jumlah pria dari masing masing pegawai
   */
-  let jumlahPria = null;
+  let jumlahPria = 0;
 
   /*
     TODO 3: Buatlah sebuah variabel bernama "jumlahWanita"
       yang berisi jumlah wanita dari masing masing pegawai
   */
-  let jumlahWanita = null;
+  let jumlahWanita = 0;
 
   /*
     TODO 4: Buatlah sebuah variabel bernama "komentar"
@@ -48,7 +48,22 @@ function lakukanLooping(arrPegawai) {
       Apabila imbang, maka komentar akan berisi:
         "Jumlah Pria dan Wanita berimbang"
   */
-  let komentar = null;
+  let komentar = "";
+
+  for(let x = 0; x < arrayObjectPegawai.length; x++) {
+    hasilLooping.push(arrayObjectPegawai[x].namaDepan + " " + arrayObjectPegawai[x].namaBelakang);
+    if(arrayObjectPegawai[x].jenisKelamin == "M")
+      jumlahPria++;
+    else if (arrayObjectPegawai[x].jenisKelamin == "F")
+      jumlahWanita++;
+  }
+
+  if (jumlahPria > jumlahWanita)
+    komentar = "Jumlah Pria lebih banyak dari Wanita";
+  else if (jumlahWanita > jumlahPria)
+    komentar = "Jumlah Wanita lebih banyak dari Pria";
+  else if(jumlahPria == jumlahWanita)
+    komentar = "Jumlah Pria dan Wanita berimbang";
 
   // ! JANGAN DIMODIFIKASI
   return {
